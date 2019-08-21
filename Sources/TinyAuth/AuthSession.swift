@@ -5,7 +5,7 @@ import TinyKeyValueStore
 /// AuthSession provides a common layer to communicate auth providers with the connected store.
 public final class AuthSession<Auth> {
     
-    public var auth: Auth? { authField.wrappedValue }
+    public var auth: Auth? { return authField.wrappedValue }
     
     private let authField: Field<String, Auth>
     
