@@ -20,7 +20,7 @@ public final class ViewController: UIViewController {
     
     // MARK: View Life Cycle
 
-    public final override func viewDidLoad() {
+    public override func viewDidLoad() {
 
         super.viewDidLoad()
 
@@ -30,7 +30,7 @@ public final class ViewController: UIViewController {
 
     // MARK: Set Up
 
-    fileprivate final func setUpRootView(_ view: UIView) {
+    private func setUpRootView(_ view: UIView) {
 
         view.backgroundColor = .white
         
