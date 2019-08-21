@@ -25,7 +25,7 @@ extension AuthSession {
     ///  the session will crash the program.
     public func authorize(
         with provider: AuthProvider<Auth, Error>,
-        completion: @escaping (Result<Auth?, Error>) -> Void
+        completion: @escaping (Result<Auth, Error>) -> Void
     ) {
         
         precondition(authTask == nil)
@@ -36,9 +36,11 @@ extension AuthSession {
             
             do {
                 
-                self.authField.wrappedValue = try result.get()
+                let auth = try result.get()
                 
-                completion(.success(self.auth))
+                self.authField.wrappedValue = auth
+                
+                completion(.success(auth))
                 
             }
             catch { completion(.failure(error)) }
