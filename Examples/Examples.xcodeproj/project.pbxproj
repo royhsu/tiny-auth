@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		B06E7087230D23C500DE0C44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E7086230D23C500DE0C44 /* AppDelegate.swift */; };
-		B06E7089230D23C500DE0C44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E7088230D23C500DE0C44 /* ViewController.swift */; };
+		B06E7089230D23C500DE0C44 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E7088230D23C500DE0C44 /* LandingViewController.swift */; };
 		B06E708B230D23C500DE0C44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06E708A230D23C500DE0C44 /* Assets.xcassets */; };
 		B06E708E230D23C500DE0C44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06E708C230D23C500DE0C44 /* LaunchScreen.storyboard */; };
 		B06E709D230D25A700DE0C44 /* TinyAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06E709C230D25A700DE0C44 /* TinyAuth.framework */; };
 		B06E709E230D25A700DE0C44 /* TinyAuth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B06E709C230D25A700DE0C44 /* TinyAuth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B06E70A0230D25A700DE0C44 /* TinyKeyValueStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06E709F230D25A700DE0C44 /* TinyKeyValueStore.framework */; };
 		B06E70A1230D25A700DE0C44 /* TinyKeyValueStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B06E709F230D25A700DE0C44 /* TinyKeyValueStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B06E70A6230E3ACB00DE0C44 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E70A5230E3ACB00DE0C44 /* FeedTableViewController.swift */; };
+		B06E70AA230E435600DE0C44 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E70A9230E435600DE0C44 /* PostTableViewCell.swift */; };
+		B06E70AE230EAA8F00DE0C44 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E70AD230EAA8F00DE0C44 /* Post.swift */; };
+		B06E70B0230EAB5300DE0C44 /* MockAuthTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E70AF230EAB5300DE0C44 /* MockAuthTask.swift */; };
+		B06E70B2230EAB8B00DE0C44 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E70B1230EAB8B00DE0C44 /* Auth.swift */; };
+		B06E70B4230EB1FE00DE0C44 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E70B3230EB1FE00DE0C44 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,12 +41,18 @@
 /* Begin PBXFileReference section */
 		B06E7083230D23C500DE0C44 /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06E7086230D23C500DE0C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B06E7088230D23C500DE0C44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B06E7088230D23C500DE0C44 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		B06E708A230D23C500DE0C44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06E708D230D23C500DE0C44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B06E708F230D23C500DE0C44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06E709C230D25A700DE0C44 /* TinyAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TinyAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06E709F230D25A700DE0C44 /* TinyKeyValueStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TinyKeyValueStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06E70A5230E3ACB00DE0C44 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		B06E70A9230E435600DE0C44 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		B06E70AD230EAA8F00DE0C44 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B06E70AF230EAB5300DE0C44 /* MockAuthTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthTask.swift; sourceTree = "<group>"; };
+		B06E70B1230EAB8B00DE0C44 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		B06E70B3230EB1FE00DE0C44 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +89,14 @@
 		B06E7085230D23C500DE0C44 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				B06E70AF230EAB5300DE0C44 /* MockAuthTask.swift */,
+				B06E70B1230EAB8B00DE0C44 /* Auth.swift */,
+				B06E70AD230EAA8F00DE0C44 /* Post.swift */,
+				B06E70A9230E435600DE0C44 /* PostTableViewCell.swift */,
+				B06E70A5230E3ACB00DE0C44 /* FeedTableViewController.swift */,
+				B06E70B3230EB1FE00DE0C44 /* FeedViewController.swift */,
+				B06E7088230D23C500DE0C44 /* LandingViewController.swift */,
 				B06E7086230D23C500DE0C44 /* AppDelegate.swift */,
-				B06E7088230D23C500DE0C44 /* ViewController.swift */,
 				B06E708A230D23C500DE0C44 /* Assets.xcassets */,
 				B06E708C230D23C500DE0C44 /* LaunchScreen.storyboard */,
 				B06E708F230D23C500DE0C44 /* Info.plist */,
@@ -157,8 +175,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B06E7089230D23C500DE0C44 /* ViewController.swift in Sources */,
+				B06E7089230D23C500DE0C44 /* LandingViewController.swift in Sources */,
+				B06E70A6230E3ACB00DE0C44 /* FeedTableViewController.swift in Sources */,
 				B06E7087230D23C500DE0C44 /* AppDelegate.swift in Sources */,
+				B06E70AA230E435600DE0C44 /* PostTableViewCell.swift in Sources */,
+				B06E70B2230EAB8B00DE0C44 /* Auth.swift in Sources */,
+				B06E70B0230EAB5300DE0C44 /* MockAuthTask.swift in Sources */,
+				B06E70B4230EB1FE00DE0C44 /* FeedViewController.swift in Sources */,
+				B06E70AE230EAA8F00DE0C44 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,12 +8,18 @@
 
 // MARK: - AppDelegate
 
+import TinyAuth
+import TinyKeyValueStore
 import UIKit
 
 @UIApplicationMain
 public final class AppDelegate: UIResponder {
     
     public final let window = UIWindow(frame: UIScreen.main.bounds)
+    
+    private let authSession = AuthSession<Auth>(
+        authField: Field(name: "auth", store: Memory())
+    )
     
 }
 
@@ -28,7 +34,7 @@ extension AppDelegate: UIApplicationDelegate {
     -> Bool {
         
         window.rootViewController = UINavigationController(
-            rootViewController: ViewController()
+            rootViewController: FeedViewController(authSession: authSession)
         )
         
         window.makeKeyAndVisible()

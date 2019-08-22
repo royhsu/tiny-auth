@@ -1,22 +1,36 @@
 //
-//  ViewController.swift
+//  LandingViewController.swift
 //  Examples
 //
 //  Created by Roy Hsu on 2019/8/21.
 //  Copyright © 2019 TinyWorld. All rights reserved.
 //
 
-// MARK: - ViewController
+// MARK: - LandingViewController
 
 import TinyAuth
 import TinyKeyValueStore
 import UIKit
 
-public final class ViewController: UIViewController {
-
-    let authSession = AuthSession<Auth>(
-        authField: Field(name: "auth", store: Memory())
-    )
+public final class LandingViewController: UIViewController {
+    
+    let authSession: AuthSession<Auth>
+    
+    var authorizeDidComplete: ((Result<Auth, Error>) -> Void)?
+    
+    init(authSession: AuthSession<Auth>) {
+        
+        self.authSession = authSession
+        
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+        
+    }
     
     // MARK: View Life Cycle
 
@@ -98,38 +112,11 @@ public final class ViewController: UIViewController {
                 },
                 completion: { result in
                 
-                    do {
-                        
-                        let auth = try result.get()
+                    defer { self.authorizeDidComplete?(result) }
+                    
+                    if let auth = try? result.get() {
                         
                         self.handleAuth(auth)
-                        
-                    }
-                    catch {
-                        
-                        DispatchQueue.main.async {
-                            
-                            let alertController = UIAlertController(
-                                title: nil,
-                                message: "\(error)",
-                                preferredStyle: .alert
-                            )
-                            
-                            alertController.addAction(
-                                UIAlertAction(
-                                    title: "OK",
-                                    style: .cancel,
-                                    handler: nil
-                                )
-                            )
-                            
-                            self.present(
-                                alertController,
-                                animated: true,
-                                completion: nil
-                            )
-                            
-                        }
                         
                     }
                 
@@ -144,13 +131,5 @@ public final class ViewController: UIViewController {
         print("Authorzied: \(auth)")
         
     }
-    
-}
-
-struct Auth { }
-
-struct MockAuthTask: AuthTask {
-    
-    func cancel() { }
     
 }
