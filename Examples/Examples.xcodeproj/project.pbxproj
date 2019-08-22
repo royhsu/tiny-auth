@@ -21,6 +21,7 @@
 		B06E70B0230EAB5300DE0C44 /* MockAuthTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E70AF230EAB5300DE0C44 /* MockAuthTask.swift */; };
 		B06E70B2230EAB8B00DE0C44 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E70B1230EAB8B00DE0C44 /* Auth.swift */; };
 		B06E70B4230EB1FE00DE0C44 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E70B3230EB1FE00DE0C44 /* FeedViewController.swift */; };
+		B06E70B6230ED59500DE0C44 /* AuthPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06E70B5230ED59500DE0C44 /* AuthPresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,7 @@
 		B06E70AF230EAB5300DE0C44 /* MockAuthTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthTask.swift; sourceTree = "<group>"; };
 		B06E70B1230EAB8B00DE0C44 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		B06E70B3230EB1FE00DE0C44 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		B06E70B5230ED59500DE0C44 /* AuthPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				B06E70AF230EAB5300DE0C44 /* MockAuthTask.swift */,
 				B06E70B1230EAB8B00DE0C44 /* Auth.swift */,
+				B06E70B5230ED59500DE0C44 /* AuthPresentation.swift */,
 				B06E70AD230EAA8F00DE0C44 /* Post.swift */,
 				B06E70A9230E435600DE0C44 /* PostTableViewCell.swift */,
 				B06E70A5230E3ACB00DE0C44 /* FeedTableViewController.swift */,
@@ -178,6 +181,7 @@
 				B06E7089230D23C500DE0C44 /* LandingViewController.swift in Sources */,
 				B06E70A6230E3ACB00DE0C44 /* FeedTableViewController.swift in Sources */,
 				B06E7087230D23C500DE0C44 /* AppDelegate.swift in Sources */,
+				B06E70B6230ED59500DE0C44 /* AuthPresentation.swift in Sources */,
 				B06E70AA230E435600DE0C44 /* PostTableViewCell.swift in Sources */,
 				B06E70B2230EAB8B00DE0C44 /* Auth.swift in Sources */,
 				B06E70B0230EAB5300DE0C44 /* MockAuthTask.swift in Sources */,

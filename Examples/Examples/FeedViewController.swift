@@ -73,7 +73,11 @@ extension FeedViewController {
     @objc
     func addPost(_ sender: UIBarButtonItem) {
         
-        requestAuth { result in
+        AuthPresentation(
+            authSession: authSession,
+            presentingViewController: self
+        )
+        .show { result in
             
             do {
                 
@@ -113,51 +117,6 @@ extension FeedViewController {
             }
             
         }
-        
-    }
-    
-}
-
-// MARK: - Auth
-
-extension FeedViewController {
-    
-    private func makeAuthViewController(
-        completion: @escaping (Result<Auth, Error>) -> Void
-    )
-    -> UIViewController {
-        
-        let landingViewController = LandingViewController(authSession: authSession)
-        
-        landingViewController.authorizeDidComplete = { result in
-            
-            self.dismiss(animated: true, completion: nil)
-            
-            completion(result)
-            
-        }
-        
-        return landingViewController
-            
-    }
-    
-    private func requestAuth(
-        completion: @escaping (Result<Auth, Error>) -> Void
-    ) {
-        
-        if let auth = authSession.auth {
-            
-            completion(.success(auth))
-            
-            return
-            
-        }
-        
-        present(
-            makeAuthViewController(completion: completion),
-            animated: true,
-            completion: nil
-        )
         
     }
     
