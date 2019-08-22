@@ -1,8 +1,11 @@
 // MARK: - AuthSession
 
+import Foundation
 import TinyKeyValueStore
 
 /// AuthSession provides a common layer to communicate auth providers with the connected store.
+///
+/// - Note: The current implementation only triggers .authDidChange notification from an AuthSession.
 public final class AuthSession<Auth> {
     
     public var auth: Auth? { return authField.wrappedValue }
@@ -11,7 +14,18 @@ public final class AuthSession<Auth> {
     
     private var authTask: AuthTask?
     
-    public init(authField: Field<String, Auth>) { self.authField = authField }
+    private let notificationCenter: NotificationCenter
+    
+    public init(
+        notificationCenter: NotificationCenter = .default,
+        authField: Field<String, Auth>
+    ) {
+        
+        self.notificationCenter = notificationCenter
+        
+        self.authField = authField
+        
+    }
     
 }
 
@@ -25,7 +39,7 @@ extension AuthSession {
     ///  the session will crash the program.
     public func authorize(
         with provider: AuthProvider<Auth, Error>,
-        completion: @escaping (Result<Auth, Error>) -> Void
+        completion: ((Result<Auth, Error>) -> Void)? = nil
     ) {
         
         precondition(authTask == nil)
@@ -40,13 +54,26 @@ extension AuthSession {
                 
                 self.authField.wrappedValue = auth
                 
-                completion(.success(auth))
+                self.notificationCenter.post(
+                    name: .authDidChange,
+                    object: self
+                )
+                
+                completion?(.success(auth))
                 
             }
-            catch { completion(.failure(error)) }
+            catch { completion?(.failure(error)) }
             
         }
         
     }
+    
+}
+
+// MARK: - Notification
+
+extension Notification.Name {
+    
+    public static let authDidChange = Notification.Name(rawValue: "authDidChange")
     
 }
